@@ -25,7 +25,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/password_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -33,7 +33,7 @@
         android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Şifre"
+        android:hint="Şifre"
         android:textColor="#ededed"
         app:layout_constraintBottom_toTopOf="@+id/button_register"
         app:layout_constraintHorizontal_bias="0.503"
@@ -41,23 +41,23 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <EditText
-        android:id="@+id/cardNumber"
+        android:id="@+id/cardNumber_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="36dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Kart Numarası"
+        android:hint="Kart Numarası"
         android:textColor="#ededed"
         app:layout_constraintBottom_toTopOf="@+id/password"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/email_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -66,7 +66,7 @@
         android:layout_marginTop="170dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="E-mail"
+        android:hint="E-mail"
         android:textColor="#ededed"
         app:layout_constraintBottom_toTopOf="@+id/cardNumber"
         app:layout_constraintHorizontal_bias="0.503"
