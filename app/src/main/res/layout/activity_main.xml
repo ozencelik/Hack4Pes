@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/izmir"
+    tools:context="design.hibiscus.hack4city.MainActivity">
+
+    <Button
+        android:id="@+id/button_loginscreen"
+        android:layout_width="215dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:alpha="0.93"
+        android:background="@drawable/roundbutton"
+        android:text="Devam etmek için basın"
+        android:textColor="#EDEDED"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp" />
+
+    <TextView
+        android:id="@+id/intro_text"
+        android:layout_width="368dp"
+        android:layout_height="80dp"
+        android:alpha="1"
+        android:text="İzmir Büyükşehir Belediyesi"
+        android:textAlignment="center"
+        android:textColor="#EDEDED"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_loginscreen"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.128" />
+</android.support.constraint.ConstraintLayout>
