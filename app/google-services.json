@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "862721917747",
+    "firebase_url": "https://fir-auth-e92c7.firebaseio.com",
+    "project_id": "fir-auth-e92c7",
+    "storage_bucket": "fir-auth-e92c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862721917747:android:9ef64fe93421d612",
+        "android_client_info": {
+          "package_name": "design.hibiscus.hack4city"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862721917747-hhhpdqmmp8jaqc6amdhoms3v5b0k9sjk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgkZuJy-g3prJnnTe8rpeeJoqx4YdFYBM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

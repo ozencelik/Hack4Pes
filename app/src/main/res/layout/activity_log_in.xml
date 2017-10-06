@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/izmir"
-    tools:context="design.hibiscus.hack4city.secondPage">
+    tools:context="design.hibiscus.hack4city.LoginActivity">
 
     <Button
         android:id="@+id/button2"
@@ -17,8 +17,7 @@
         android:text="Kartsız Giriş"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="462dp"
-        app:layout_constraintHorizontal_bias="0.498" />
+        tools:layout_editor_absoluteY="389dp" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="300dp"
@@ -63,21 +62,21 @@
             android:layout_marginRight="8dp"
             app:layout_constraintRight_toRightOf="parent" />
 
-        <TextView
-            android:id="@+id/text_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="23dp"
-            android:text="Kart ile giriş"
-            android:textAlignment="center"
-            android:textColor="#ededed"
-            android:textSize="38dp"
-            app:layout_constraintHorizontal_bias="0.52"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/text_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="179dp"
+        android:text="Kart ile giriş"
+        android:textAlignment="center"
+        android:textColor="#ededed"
+        android:textSize="38dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

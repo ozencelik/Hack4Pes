@@ -18,7 +18,10 @@ public class MainActivity extends AppCompatActivity {
         firstpage_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, secondPage.class));
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+
+
+
 
             }
         });
