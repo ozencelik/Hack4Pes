@@ -5,99 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/izmir"
-    tools:context="design.hibiscus.hack4city.secondPage">
+    tools:context="design.hibiscus.hack4city.RegisterActivity">
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="300dp"
+        android:id="@+id/constraintLayout2"
+        android:layout_width="330dp"
         android:layout_height="300dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:alpha="0.7"
-        android:background="@drawable/roundbutton"
+        android:layout_marginTop="16dp"
+        android:alpha="0.8"
+        android:background="#2FA4D9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/constraintLayout">
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="100dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:text="Şifre"
-            app:layout_constraintHorizontal_bias="0.507"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toTopOf="parent">
 
     </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/text_login"
+    <EditText
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="146dp"
-        android:text="Kart ile giriş"
-        android:textAlignment="center"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Şifre"
         android:textColor="#ededed"
-        android:textSize="38dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:alpha="1"
-        android:background="#00ffffff"
-        android:text="Üye Ol"
-        android:textColor="#ededed"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@+id/button_register"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/cardNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="198dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Kart Numarası"
+        android:textColor="#ededed"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="170dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="E-mail"
+        android:textColor="#ededed"
+        app:layout_constraintBottom_toTopOf="@+id/cardNumber"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.41" />
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="240dp"
+        android:layout_marginBottom="166dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:background="#00ffffff"
-        android:text="Giriş Yap"
+        android:text="Üye Ol"
         android:textColor="#ededed"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
