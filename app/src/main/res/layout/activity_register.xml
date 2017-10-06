@@ -68,7 +68,6 @@
         android:inputType="textPersonName"
         android:hint="E-mail"
         android:textColor="#ededed"
-        app:layout_constraintBottom_toTopOf="@+id/cardNumber"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
