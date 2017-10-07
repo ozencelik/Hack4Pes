@@ -93,5 +93,4 @@ public class RegisterActivity extends Activity {
 
     }
 
-
 }
