@@ -224,9 +224,7 @@ public class LocationActivity extends Activity {
 
         @Override
         protected void onPostExecute(String s) {
-
             verileriGoster.setText(s);
-
         }
 
 
