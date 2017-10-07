@@ -27,7 +27,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_weight="0.35"
-                android:hint="Gidiş" />
+                android:hint="Gidiş"
+                android:textColor="#000000"
+                android:textColorHint="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,7 +44,9 @@
                 android:layout_height="50dp"
                 android:layout_weight="0.03"
                 android:ems="10"
-                android:hint="Varış" />
+                android:hint="Varış"
+                android:textColor="#000000"
+                android:textColorHint="#000000" />
         </LinearLayout>
 
         <LinearLayout
