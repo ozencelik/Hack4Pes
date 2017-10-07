@@ -68,6 +68,7 @@ public class LoginActivity extends Activity {
 
                                 } else {
                                     // If sign in fails, display a message to the user.
+
                                     Log.w(TAG, "signInWithEmail:failure", task.getException());
                                     Toast.makeText(LoginActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
@@ -86,7 +87,7 @@ public class LoginActivity extends Activity {
         directRegisterScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, TabActivity.class));
             }
         });
 
