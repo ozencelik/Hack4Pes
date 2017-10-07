@@ -1,6 +1,7 @@
 package design.hibiscus.hack4city;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -39,55 +40,59 @@ public class RegisterActivity extends Activity {
 
         email = (EditText)findViewById(R.id.email_text);
         password = (EditText)findViewById(R.id.password_text);
-        cardNumber = (EditText)findViewById(R.id.cardNumber_text);
+       cardNumber = (EditText)findViewById(R.id.cardNumber_text);
+
+
         mAuth = FirebaseAuth.getInstance();
 
         register = (Button)findViewById(R.id.button_register);
 
+        if(cardNumber.length()!=11){
+            Context context = getApplicationContext();
+            CharSequence text = "Geçersiz kart numarası!";
+            int duration = Toast.LENGTH_SHORT;
 
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+
+        }
+        else {
 
 
+            register.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
 
-                String Email = email.getText().toString();
-                String PassWord = password.getText().toString();
+                    String Email = email.getText().toString();
+                    String PassWord = password.getText().toString();
 
 
+                    mAuth.createUserWithEmailAndPassword(Email, PassWord)
+                            .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.d(TAG, "createUserWithEmail:success");
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        //updateUI(user);
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                        Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                        //updateUI(null);
+                                    }
 
-                mAuth.createUserWithEmailAndPassword(Email, PassWord)
-                        .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.d(TAG, "createUserWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    //updateUI(user);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(RegisterActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                    //updateUI(null);
+                                    // ...
                                 }
-
-                                // ...
-                            }
-                        });
+                            });
 
 
-
-
-
-
-
-
-
-            }
-        });
+                }
+            });
+        }
 
 
 
