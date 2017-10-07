@@ -30,7 +30,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginTop="100dp"
             android:ems="10"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress|textPassword"
             android:text="E-mail"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintLeft_toLeftOf="parent"

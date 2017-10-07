@@ -62,7 +62,7 @@ public class LoginActivity extends Activity {
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                    Toast.makeText(LoginActivity.this, "Giriş başarısız.",
                                             Toast.LENGTH_SHORT).show();
                                     //updateUI(null);
                                 }
@@ -79,7 +79,7 @@ public class LoginActivity extends Activity {
         directRegisterScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, TabActivity.class));
             }
         });
 
