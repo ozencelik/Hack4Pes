@@ -9,8 +9,10 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -47,6 +49,7 @@ public class LocationActivity extends Activity {
 
     //private Button getLoc;
 
+    Button button_rota;
     String[] items;
     ArrayList<String> listItems;
     ArrayAdapter<String> adapter;
@@ -58,9 +61,18 @@ public class LocationActivity extends Activity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         //verileriGoster = (TextView)findViewById(R.id.textView);
         //getLoc = (Button)findViewById(R.id.getLocation);
+        button_rota = (Button) findViewById(R.id.deneme);
+
+        button_rota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LocationActivity.this,TabActivity.class));
+            }
+        });
 
         listView = (ListView)findViewById(R.id.listViewDeparture);
         departure = (EditText)findViewById(R.id.textSearchDeparture);
