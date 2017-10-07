@@ -50,19 +50,27 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
 
-                mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
+                String emailString = email.getText().toString();
+                String passwordString = password.getText().toString();
+
+                mAuth.signInWithEmailAndPassword(emailString, passwordString)
                         .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
-                                    Log.d(TAG, "createUserWithEmail:success");
+                                    Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     //updateUI(user);
+                                    Intent i = new Intent(getBaseContext(), LocationActivity.class);
+                                    startActivity(i);
+
+
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(LoginActivity.this, "Giriş başarısız.",
+
+                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                     //updateUI(null);
                                 }
