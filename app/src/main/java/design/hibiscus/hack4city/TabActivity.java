@@ -18,25 +18,22 @@ public class TabActivity extends AppCompatActivity {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-           // Fragment selectedFragment = null;
+            Fragment selectedFragment = null;
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     HizFragment fragment1 = new HizFragment();
                     FragmentTransaction fragmentTransaction1 = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction1.replace(R.id.frame,fragment1);
-                    fragmentTransaction1.commit();
                     return true;
                 case R.id.navigation_dashboard:
                     CevreFragment fragment2 = new CevreFragment();
                     FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction2.replace(R.id.frame,fragment2);
-                    fragmentTransaction2.commit();
                     return true;
                 case R.id.navigation_notifications:
                     KonforFragment fragment3 = new KonforFragment();
                     FragmentTransaction fragmentTransaction3 = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction3.replace(R.id.frame,fragment3);
-                    fragmentTransaction3.commit();
                     return true;
             }
             return false;
@@ -54,10 +51,9 @@ public class TabActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        CevreFragment fragment = new CevreFragment();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame,fragment);
-        fragmentTransaction.commit();
+        CevreFragment fragment2 = new CevreFragment();
+        FragmentTransaction fragmentTransaction2 = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction2.replace(R.id.frame,fragment2);
 
 
     }

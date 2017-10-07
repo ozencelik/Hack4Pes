@@ -2,7 +2,6 @@ package design.hibiscus.hack4city;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -38,7 +37,7 @@ public class LocationActivity extends Activity {
     private final String Vapurİskeleleri = "VapurIskeleleri";
     private final String BisimIstasyonlar = "BisimIstasyonlar";
 
-    public static String URI = "http://hackathon.izmir.bel.tr/api/token";
+    public static String URI = "http://hackathon.izmir.bel.tr/api/VapurIskeleleri";
 
     private TextView verileriGoster;
     private JSONObject json;
@@ -70,7 +69,8 @@ public class LocationActivity extends Activity {
         button_rota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LocationActivity.this,TabActivity.class));
+                //startActivity(new Intent(LocationActivity.this,TabActivity.class));
+                new GetData(LocationActivity.this).execute("Adi");
             }
         });
 
@@ -148,12 +148,7 @@ public class LocationActivity extends Activity {
             }
         });
 
-//        getLoc.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                new GetData(LocationActivity.this).execute("access_token");
-//            }
-//        });
+
 
 
     }
