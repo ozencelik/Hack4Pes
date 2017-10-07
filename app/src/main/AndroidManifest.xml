@@ -24,9 +24,6 @@
         <activity android:name=".LocationActivity" />
 
 
-        <activity
-            android:name=".TabActivity"
-            android:label="@string/title_activity_tab"></activity>
     </application>
 
 </manifest>

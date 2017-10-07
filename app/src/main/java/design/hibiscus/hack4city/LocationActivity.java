@@ -2,7 +2,6 @@ package design.hibiscus.hack4city;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -140,7 +139,6 @@ public class LocationActivity extends Activity {
                 }
                 else if(isArrivalSet){
                     arrival.setText(listView.getItemAtPosition(position).toString());
-                    new Intent(LocationActivity.this,TabActivity.class);
                 }
 
             }
@@ -226,9 +224,7 @@ public class LocationActivity extends Activity {
 
         @Override
         protected void onPostExecute(String s) {
-
             verileriGoster.setText(s);
-
         }
 
 
