@@ -68,13 +68,7 @@ public class LocationActivity extends Activity {
         listView.setVisibility(View.INVISIBLE);
 
         initList();
-        departure.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isDepartureSet = true;
-                isArrivalSet = false;
-            }
-        });
+
         departure.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -83,7 +77,8 @@ public class LocationActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                isDepartureSet = true;
+                isArrivalSet = false;
                 if(s.toString().equals("")){
                     initList();
                     listView.setVisibility(View.INVISIBLE);
@@ -99,13 +94,7 @@ public class LocationActivity extends Activity {
 
             }
         });
-        arrival.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isArrivalSet = true;
-                isDepartureSet = false;
-            }
-        });
+
         arrival.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -114,6 +103,8 @@ public class LocationActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                isArrivalSet = true;
+                isDepartureSet = false;
                 if(s.toString().equals("")){
                     initList();
                     listView.setVisibility(View.INVISIBLE);
