@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class KonforFragment extends Fragment {
-    @Nullable
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);

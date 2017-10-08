@@ -13,11 +13,16 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD_bP0fyIHqxB2F1xxyJTaC6qcgY0PFeck"/>
+
         <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".HizFragment" />
-        <activity android:name=".KonforFragment" />
-        <activity android:name=".CevreFragment" />
+        <activity android:name=".TabActivity" />
+        <activity android:name=".NewLocationaActivity"/>
+        <activity android:name=".MapsActivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +33,11 @@
         <activity android:name=".LocationActivity"
             android:windowSoftInputMode="adjustPan"/>
 
-
+        <provider
+            android:name="design.hibiscus.hack4city.PlaceContentProvider"
+            android:authorities="com.example.android.shusme"
+            android:exported="false"
+            android:multiprocess="true"/>
     </application>
 
 </manifest>

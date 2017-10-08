@@ -2,6 +2,7 @@ package design.hibiscus.hack4city;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -37,7 +39,7 @@ public class LocationActivity extends Activity {
     private final String Vapurİskeleleri = "VapurIskeleleri";
     private final String BisimIstasyonlar = "BisimIstasyonlar";
 
-    public static String URI = "http://hackathon.izmir.bel.tr/api/VapurIskeleleri";
+    public static String URI = "https://hackathon.izmir.bel.tr/api/token";
 
     private TextView verileriGoster;
     private JSONObject json;
@@ -69,8 +71,22 @@ public class LocationActivity extends Activity {
         button_rota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //startActivity(new Intent(LocationActivity.this,TabActivity.class));
-                new GetData(LocationActivity.this).execute("Adi");
+                if(!departure.getText().toString().equals("") && !arrival.getText().toString().equals("")){
+//                    Intent intent = new Intent(LocationActivity.this,TabActivity.class);
+//                    intent.putExtra("DepartureLocation", departure.getText().toString());
+//                    intent.putExtra("ArrivalLocation", arrival.getText().toString());
+//                    startActivity(intent);
+
+                        startActivity(new Intent(LocationActivity.this, NewLocationaActivity.class));
+
+//                Toast.makeText(LocationActivity.this,""+
+//                        new GetData(LocationActivity.this).execute().toString(),
+//                        Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(LocationActivity.this,"Lütfen Konum Seçiniz ",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
@@ -147,9 +163,6 @@ public class LocationActivity extends Activity {
 
             }
         });
-
-
-
 
     }
 
