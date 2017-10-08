@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:orientation="vertical">
+
+         <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="onAddPlaceButtonClicked"
+        android:text="New Location"
+        android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Locations"
+            android:id="@+id/loc"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/places_list_rec_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -38,7 +39,7 @@ public class LocationActivity extends Activity {
     private final String Vapurİskeleleri = "VapurIskeleleri";
     private final String BisimIstasyonlar = "BisimIstasyonlar";
 
-    public static String URI = "http://hackathon.izmir.bel.tr/api/token";
+    public static String URI = "https://hackathon.izmir.bel.tr/api/token";
 
     private TextView verileriGoster;
     private JSONObject json;
@@ -70,7 +71,22 @@ public class LocationActivity extends Activity {
         button_rota.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LocationActivity.this,TabActivity.class));
+                if(!departure.getText().toString().equals("") && !arrival.getText().toString().equals("")){
+//                    Intent intent = new Intent(LocationActivity.this,TabActivity.class);
+//                    intent.putExtra("DepartureLocation", departure.getText().toString());
+//                    intent.putExtra("ArrivalLocation", arrival.getText().toString());
+//                    startActivity(intent);
+
+                        startActivity(new Intent(LocationActivity.this, NewLocationaActivity.class));
+
+//                Toast.makeText(LocationActivity.this,""+
+//                        new GetData(LocationActivity.this).execute().toString(),
+//                        Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(LocationActivity.this,"Lütfen Konum Seçiniz ",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
@@ -81,13 +97,7 @@ public class LocationActivity extends Activity {
         listView.setVisibility(View.INVISIBLE);
 
         initList();
-        departure.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isDepartureSet = true;
-                isArrivalSet = false;
-            }
-        });
+
         departure.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -96,7 +106,8 @@ public class LocationActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                isDepartureSet = true;
+                isArrivalSet = false;
                 if(s.toString().equals("")){
                     initList();
                     listView.setVisibility(View.INVISIBLE);
@@ -112,13 +123,7 @@ public class LocationActivity extends Activity {
 
             }
         });
-        arrival.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isArrivalSet = true;
-                isDepartureSet = false;
-            }
-        });
+
         arrival.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -127,6 +132,8 @@ public class LocationActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                isArrivalSet = true;
+                isDepartureSet = false;
                 if(s.toString().equals("")){
                     initList();
                     listView.setVisibility(View.INVISIBLE);
@@ -152,21 +159,10 @@ public class LocationActivity extends Activity {
                 }
                 else if(isArrivalSet){
                     arrival.setText(listView.getItemAtPosition(position).toString());
-                    new Intent(LocationActivity.this,TabActivity.class);
                 }
 
             }
         });
-
-
-//        getLoc.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                new GetData(LocationActivity.this).execute("access_token");
-//            }
-//        });
-
-
 
     }
 
@@ -238,9 +234,7 @@ public class LocationActivity extends Activity {
 
         @Override
         protected void onPostExecute(String s) {
-
             verileriGoster.setText(s);
-
         }
 
 
