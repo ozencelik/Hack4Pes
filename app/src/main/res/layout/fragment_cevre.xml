@@ -50,7 +50,6 @@
             android:layout_marginStart="10dp"
             android:text="Defa yeşil ulaşımı tercih ettiniz"
             android:textColor="#00a000"
-            android:textColorHighlight="true"
             android:textSize="27dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
